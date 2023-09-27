@@ -1,0 +1,14 @@
+function reverse(x: number): number {
+    let newI = "";
+    let s = x.toString().split("");
+    let negative = ""
+    if(s[0] === "-") {
+        negative = "-";
+        s.shift();
+    }
+    for(let i = s.length -1; i >= 0; i --){
+        newI = newI + s[i];
+    }
+    const newInt = parseInt(negative + newI);
+    return Math.pow(-2, 31) < newInt && newInt < (Math.pow(2, 31) -1) ? newInt : 0;
+};
